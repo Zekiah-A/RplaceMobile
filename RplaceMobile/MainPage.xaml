@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:rp="using:RplaceMobile"
+             x:Class="RplaceMobile.MainPage">
+	<Grid>
+			<Grid Background="White" ZIndex="1"  x:Name="WelcomePage">
+				<rp:TilingImage Grid.Row="0" Grid.RowSpan="3" Source="Resources/pattern.png" TileWidth="64" TileHeight="64" />
+				<ScrollView HorizontalOptions="Fill" VerticalOptions="Fill">
+					<Grid RowDefinitions="Auto, Auto, *">
+						<Image Grid.Row="0" Grid.RowSpan="2" Source="rplace.png" MaximumWidthRequest="400" />
+						<Frame Grid.Row="0" Grid.RowSpan="2" BorderColor="White" CornerRadius="0">
+							<Frame.Background>
+								<LinearGradientBrush EndPoint="0,1">
+									<GradientStop Color="#0FFF" Offset="0" />
+									<GradientStop Color="#E8FFFFFF" Offset="0.8" />
+								</LinearGradientBrush>
+							</Frame.Background>
+						</Frame>
+						<BoxView Color="#E8FFFFFF" Grid.Row="2"></BoxView>
+						<Grid Grid.Row="1" RowSpan="2" RowDefinitions="Auto, *, Auto" Margin="8">
+							<Label Grid.Row="0" FontAttributes="Bold" FontSize="48" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">Welcome 👋</Label>
+							<StackLayout Grid.Row="1" Spacing="8" Margin="0, 32, 0, 0">
+								<Label FontSize="16">There is a massive multiplayer canvas.</Label>
+								<Label FontSize="16">Build with others, form factions and create art.</Label>
+								<Label FontSize="16">Individually you can create something,</Label>
+								<Label FontSize="16">Together you can create something more...</Label>
+								<Frame BackgroundColor="Transparent" VerticalOptions="Center" MaximumHeightRequest="300">
+									<Image Source="chat2.png" />
+								</Frame>
+							</StackLayout>
+							<Button Grid.Row="3" Text="Let's go!" Clicked="WelcomePageContinueClicked" />
+						</Grid>
+					</Grid>
+				</ScrollView>
+			</Grid>
+		<WebView x:Name="WebApp" />
+    </Grid>
+</ContentPage>
